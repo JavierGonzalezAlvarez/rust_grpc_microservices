@@ -1,0 +1,30 @@
+syntax = "proto3";
+package microservices;
+
+service Msname {
+    rpc SendName (NameRequest) returns (NameResponse);
+}
+
+message NameRequest {
+    string name = 1;    
+}
+
+message NameResponse {
+    bool   successful = 1;
+    string message    = 2;
+}
+
+service Mssurname {
+    rpc SendSurname (SurnameRequest) returns (SurnameResponse);
+}
+
+
+message SurnameRequest {
+    string name = 1;    
+    string surname = 2;    
+}
+
+message SurnameResponse {
+    bool   successful = 1;
+    string message    = 2;
+}
